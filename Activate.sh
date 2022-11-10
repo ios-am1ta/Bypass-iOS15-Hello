@@ -1,5 +1,5 @@
 #!/bin/bash
-#BY Brayan-Villa 10/06/2022
+#BY Kangkarungs 2022
 Prnt(){ printf $1; };
 Slp(){ sleep $1; };
 SshC(){ sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost ''$1''; };
