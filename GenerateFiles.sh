@@ -7,7 +7,7 @@ Devi(){ ideviceinfo | grep -w $1 | awk '{printf $NF}'; };
 PLutil(){ echo -e $1 >>$2; };
 
 printf "making activation_record.plist"; Prnt "."; Slp ".2"; Prnt "."; Slp ".2"; Prnt "."; Slp ".2"; Prnt ".";
-curl -s "https://bigb033xecution3r.com/iOS15/iOS15Activ.php?udid=$(Devi UniqueDeviceID)&bv=$(Devi BuildVersion)&dc=$(Devi DeviceClass)&dv=$(Devi DeviceVariant)&mn=$(Devi ModelNumber)&ot=$(Devi OSType)&pt=$(Devi ProductType)&pv=$(Devi ProductVersion)&rmn=$(Devi RegulatoryModelNumber)&ucid=$(Devi UniqueChipID)" --output activation_record.plist
+curl -s "https://exampple.com/api.php?udid=$(Devi UniqueDeviceID)&bv=$(Devi BuildVersion)&dc=$(Devi DeviceClass)&dv=$(Devi DeviceVariant)&mn=$(Devi ModelNumber)&ot=$(Devi OSType)&pt=$(Devi ProductType)&pv=$(Devi ProductVersion)&rmn=$(Devi RegulatoryModelNumber)&ucid=$(Devi UniqueChipID)" --output activation_record.plist
 printf "\nmaking IC-Info.sisv"; Prnt "."; Slp ".2"; Prnt "."; Slp ".2"; Prnt "."; Slp ".2"; Prnt ".";
 grep -A 40 '<key>FairPlayKeyData</key>' activation_record.plist | grep -B 40 'Cg==' | sed 's/<key>FairPlayKeyData<\/key>//g' | sed 's/<data>//g' | sed 's/<\/data>//g' &>IC
 base64 -d -i IC | Replace '-----BEGIN CONTAINER-----' '' | Replace '-----END CONTAINER-----' '' &>IC-Info;
